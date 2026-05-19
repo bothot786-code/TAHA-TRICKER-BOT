@@ -1,0 +1,20 @@
+{
+  "3938985096394375": {
+    "chand": {
+      "value": 1,
+      "createdBy": "100012106845156",
+      "createdAt": 1778012685031,
+      "label": "chand"
+    },
+    "_trackedWords": [
+      "lol"
+    ],
+    "lol": {
+      "value": 8,
+      "createdBy": "100012106845156",
+      "createdAt": 1778013083122,
+      "label": "lol",
+      "isWordTracker": true
+    }
+  }
+}

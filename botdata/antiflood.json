@@ -1,0 +1,14 @@
+{
+  "1292462265557937": {
+    "enabled": false,
+    "limit": 10,
+    "window": 5,
+    "action": "kick"
+  },
+  "3938985096394375": {
+    "enabled": true,
+    "limit": 10,
+    "window": 5,
+    "action": "kick"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "1292462265557937": {
+    "enabled": false,
+    "notiName": false,
+    "notiColor": false,
+    "notiEmoji": false,
+    "notiNickname": false,
+    "notiImage": false,
+    "notiAdmin": false,
+    "notiPin": false,
+    "notiPoll": false,
+    "notiCall": false,
+    "notiJoin": false,
+    "notiLeave": false
+  }
+}

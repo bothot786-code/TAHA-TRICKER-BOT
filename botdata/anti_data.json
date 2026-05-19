@@ -1,0 +1,16 @@
+{
+  "1292462265557937": {
+    "enabled": true,
+    "antiName": false,
+    "antiColor": false,
+    "antiEmoji": true,
+    "antiNickname": false,
+    "antiImage": false,
+    "antiAdmin": false,
+    "antiSpam": true,
+    "allowGroupAdmin": false,
+    "original": {
+      "emoji": "🙂"
+    }
+  }
+}

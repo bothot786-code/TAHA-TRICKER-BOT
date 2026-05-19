@@ -1,0 +1,27 @@
+{
+  "1627939748248242": {
+    "lockDp": true,
+    "originalDpPath": "/home/runner/workspace/raza/commands/data/lockdp/1627939748248242_dp.jpg",
+    "lockDpAt": "2026-03-09T01:49:25.278Z"
+  },
+  "24054874117542413": {
+    "lockDp": true,
+    "originalDpPath": "/home/runner/workspace/node_modules/lodash-pari/commands/data/lockdp/24054874117542413_dp.jpg",
+    "lockDpAt": "2026-04-14T09:10:15.848Z"
+  },
+  "1292462265557937": {
+    "lockDp": false,
+    "originalDpPath": "/home/runner/workspace/node_modules/lodash-pari/commands/data/lockdp/1292462265557937_dp.jpg",
+    "lockDpAt": "2026-05-02T17:18:47.554Z"
+  },
+  "907193925594599": {
+    "lockDp": true,
+    "originalDpPath": "/home/runner/workspace/node_modules/lodash-pari/commands/data/lockdp/907193925594599_dp.jpg",
+    "lockDpAt": "2026-05-02T22:53:38.332Z"
+  },
+  "3938985096394375": {
+    "lockDp": true,
+    "originalDpPath": "/home/runner/workspace/node_modules/lodash-pari/commands/data/lockdp/3938985096394375_dp.jpg",
+    "lockDpAt": "2026-05-04T20:12:06.576Z"
+  }
+}
