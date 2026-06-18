@@ -3,174 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Taha Bot Multi-Panel Portal</title>
+    <title>TAHA BOT Multi-Panel Portal</title>
     <style>
         :root {
-            --bg-color: #f97316;
-            --panel-bg: #ea580c;
-            --accent-blue: #374151;
+            --bg-color: #0f172a;
+            --panel-bg: #1e293b;
+            --accent-blue: #38bdf8;
             --accent-green: #22c55e;
+            --accent-red: #ef4444;
             --text-main: #f8fafc;
             --text-muted: #94a3b8;
             --border: #334155;
         }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-
-        body {
-            background-color: var(--bg-color);
-            color: var(--text-main);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            padding: 20px;
-        }
-
-        .panel-container {
-            width: 100%;
-            max-width: 500px;
-            background-color: var(--panel-bg);
-            border: 1px solid var(--border);
-            border-radius: 12px;
-            padding: 30px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
-        }
-
-        .page {
-            display: none;
-        }
-
-        .page.active {
-            display: block;
-        }
-
-        h2 {
-            text-align: center;
-            margin-bottom: 20px;
-            color: var(--accent-blue);
-        }
-
-        /* Forms & Inputs */
-        .form-group {
-            margin-bottom: 15px;
-        }
-
-        label {
-            display: block;
-            margin-bottom: 5px;
-            font-size: 0.9rem;
-            color: var(--text-muted);
-        }
-
-        input {
-            width: 100%;
-            padding: 10px;
-            background-color: var(--bg-color);
-            border: 1px solid var(--border);
-            border-radius: 6px;
-            color: var(--text-main);
-            font-size: 1rem;
-        }
-
-        input:focus {
-            outline: none;
-            border-color: var(--accent-blue);
-        }
-
-        .btn {
-            width: 100%;
-            padding: 12px;
-            background-color: var(--accent-blue);
-            color: var(--bg-color);
-            border: none;
-            border-radius: 6px;
-            font-weight: bold;
-            font-size: 1rem;
-            cursor: pointer;
-            margin-top: 10px;
-            transition: 0.2s;
-        }
-
-        .btn:hover {
-            opacity: 0.9;
-        }
-
-        .btn-green {
-            background-color: var(--accent-green);
-            color: #000;
-        }
-
-        /* Bot List & Bot Cards */
-        .bot-card {
-            background-color: var(--bg-color);
-            border: 1px solid var(--border);
-            padding: 15px;
-            border-radius: 8px;
-            margin-top: 15px;
-        }
-
-        .bot-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-bottom: 1px solid var(--border);
-            padding-bottom: 8px;
-            margin-bottom: 10px;
-        }
-
-        .status-dot {
-            display: inline-block;
-            width: 10px;
-            height: 10px;
-            background-color: var(--accent-green);
-            border-radius: 50%;
-            box-shadow: 0 0 8px var(--accent-green);
-        }
-
-        .bot-details p {
-            font-size: 0.9rem;
-            margin-bottom: 4px;
-            color: var(--text-muted);
-        }
-
-        .bot-details strong {
-            color: var(--text-main);
-        }
-
-        /* Commands View */
-        .cmd-list {
-            margin-top: 15px;
-            max-height: 250px;
-            overflow-y: auto;
-        }
-
-        .cmd-item {
-            background-color: var(--bg-color);
-            padding: 10px;
-            border-left: 4px solid var(--accent-blue);
-            border-radius: 0 6px 6px 0;
-            margin-bottom: 8px;
-            font-size: 0.9rem;
-        }
-
-        .cmd-name {
-            font-weight: bold;
-            color: var(--accent-blue);
-        }
-
-        .error-msg {
-            color: #ef4444;
-            font-size: 0.85rem;
-            text-align: center;
-            margin-top: 10px;
-            display: none;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
+        body { background-color: var(--bg-color); color: var(--text-main); display: flex; justify-content: center; align-items: center; min-height: 100vh; padding: 20px; }
+        .panel-container { width: 100%; max-width: 500px; background-color: var(--panel-bg); border: 1px solid var(--border); border-radius: 12px; padding: 30px; box-shadow: 0 10px 25px rgba(0,0,0,0.3); }
+        .page { display: none; }
+        .page.active { display: block; }
+        h2 { text-align: center; margin-bottom: 20px; color: var(--accent-blue); }
+        .form-group { margin-bottom: 12px; }
+        label { display: block; margin-bottom: 5px; font-size: 0.9rem; color: var(--text-muted); }
+        input { width: 100%; padding: 10px; background-color: var(--bg-color); border: 1px solid var(--border); border-radius: 6px; color: var(--text-main); font-size: 1rem; }
+        input:focus { outline: none; border-color: var(--accent-blue); }
+        .btn { width: 100%; padding: 12px; background-color: var(--accent-blue); color: var(--bg-color); border: none; border-radius: 6px; font-weight: bold; font-size: 1rem; cursor: pointer; margin-top: 10px; transition: 0.2s; }
+        .btn:hover { opacity: 0.9; }
+        .btn-green { background-color: var(--accent-green); color: #000; }
+        .btn-red { background-color: var(--accent-red); color: #fff; }
+        
+        .bot-card { background-color: var(--bg-color); border: 1px solid var(--border); padding: 15px; border-radius: 8px; margin-top: 15px; }
+        .bot-header { display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--border); padding-bottom: 8px; margin-bottom: 10px; }
+        .status-dot { display: inline-block; width: 10px; height: 10px; background-color: var(--text-muted); border-radius: 50%; }
+        .status-dot.online { background-color: var(--accent-green); box-shadow: 0 0 8px var(--accent-green); }
+        .bot-details p { font-size: 0.9rem; margin-bottom: 4px; color: var(--text-muted); }
+        .bot-details strong { color: var(--text-main); }
+        
+        .cmd-list { margin-top: 15px; max-height: 250px; overflow-y: auto; }
+        .cmd-item { background-color: var(--bg-color); padding: 10px; border-left: 4px solid var(--accent-blue); border-radius: 0 6px 6px 0; margin-bottom: 8px; font-size: 0.9rem; }
+        .cmd-name { font-weight: bold; color: var(--accent-blue); }
+        .error-msg { color: #ef4444; font-size: 0.85rem; text-align: center; margin-top: 10px; display: none; }
     </style>
 </head>
 <body>
@@ -179,70 +50,51 @@
 
         <div id="page1" class="page active">
             <h2>🔐 Login Panel</h2>
-            <div class="form-group">
-                <label>Username</label>
-                <input type="text" id="username" placeholder="Enter username...">
-            </div>
-            <div class="form-group">
-                <label>Password</label>
-                <input type="password" id="password" placeholder="Enter password...">
-            </div>
+            <div class="form-group"><label>Username</label><input type="text" id="username" value="admin"></div>
+            <div class="form-group"><label>Password</label><input type="password" id="password" value="1234"></div>
             <button class="btn" onclick="handleLogin()">Login</button>
             <p id="login-error" class="error-msg">Incorrect Username or Password!</p>
         </div>
 
-
         <div id="page2" class="page">
-            <h2>🚀 Run New Bot</h2>
+            <h2>🚀 Control Dashboard</h2>
             
-            <div class="form-group">
-                <label>UID Bot</label>
-                <input type="text" id="botUid" placeholder="e.g., 1000837372">
-            </div>
-            <div class="form-group">
-                <label>Bot Name</label>
-                <input type="text" id="botName" placeholder="e.g., TAHA Babu-MD">
-            </div>
-            <div class="form-group">
-                <label>Owner Name</label>
-                <input type="text" id="ownerName" placeholder="e.g., Taha Khan">
-            </div>
-            <div class="form-group">
-                <label>AppState Name</label>
-                <input type="text" id="appStateName" placeholder="e.g., appstate.json">
-            </div>
-            <button class="btn btn-green" onclick="runBot()">Live Run Bot</button>
+            <div class="form-group"><label>UID Bot</label><input type="text" id="botUid" value="1000837372"></div>
+            <div class="form-group"><label>Bot Name</label><input type="text" id="botName" value="CHAND-TRICKER-BOT"></div>
+            <div class="form-group"><label>Owner Name</label><input type="text" id="ownerName" value="Chand"></div>
+            <div class="form-group"><label>AppState Name</label><input type="text" id="appStateName" value="appstate.json"></div>
+            <div class="form-group"><label>Bot Prefix</label><input type="text" id="botPrefix" value="!"></div>
+            
+            <button class="btn btn-green" id="runBtn" onclick="startBackendBot()">Live Run Bot</button>
+            <button class="btn btn-red" id="stopBtn" style="display:none;" onclick="stopBackendBot()">Stop Bot Process</button>
 
-            <h3 style="margin-top: 25px; font-size: 1.1rem; border-bottom: 1px solid var(--border); padding-bottom: 5px;">🟢 Online Bots</h3>
+            <h3 style="margin-top: 25px; font-size: 1.1rem; border-bottom: 1px solid var(--border); padding-bottom: 5px;">🟢 System Status</h3>
             <div id="online-bots-list">
                 <div class="bot-card">
                     <div class="bot-header">
-                        <span style="font-weight: bold;">Main System Bot</span>
-                        <span class="status-dot"></span>
+                        <span id="displayBotName" style="font-weight: bold;">No Active Bot</span>
+                        <div style="display:flex; align-items:center; gap:5px;">
+                            <span id="statusText" style="font-size: 0.8rem; color: var(--text-muted);">Offline</span>
+                            <span id="liveStatusDot" class="status-dot"></span>
+                        </div>
                     </div>
                     <div class="bot-details">
-                        <p>UID: <strong>848492002</strong></p>
-                        <p>Owner: <strong>Admin</strong></p>
-                        <p>AppState: <strong>main_state.json</strong></p>
+                        <p>UID: <strong id="displayUid">-</strong></p>
+                        <p>AppState: <strong id="displayAppState">-</strong></p>
+                        <p>Uptime: <strong id="displayUptime" style="color: var(--accent-blue);">0s</strong></p>
                     </div>
                 </div>
             </div>
 
-            <button class="btn" style="background-color: transparent; border: 1px solid var(--border); color: var(--text-main); margin-top: 20px;" onclick="switchPage(3)">View Commands list →</button>
+            <button class="btn" style="background-color: transparent; border: 1px solid var(--border); color: var(--text-main); margin-top: 20px;" onclick="switchPage(3)">View Active Commands List →</button>
         </div>
 
-
         <div id="page3" class="page">
-            <h2>📜 Bot Commands</h2>
-            <p style="color: var(--text-muted); text-align: center; font-size: 0.9rem;">System available active commands layout</p>
+            <h2>📜 Script Internal Commands</h2>
+            <p style="color: var(--text-muted); text-align: center; font-size: 0.9rem;">Prefix ke saath dynamic layout</p>
             
-            <div class="cmd-list">
-                <div class="cmd-item"><span class="cmd-name">!menu</span> - Show main bot interaction interface.</div>
-                <div class="cmd-item"><span class="cmd-name">!status</span> - Check server uptime and live parameters.</div>
-                <div class="cmd-item"><span class="cmd-name">!restart</span> - Reboot bot instance system.</div>
-                <div class="cmd-item"><span class="cmd-name">!addcmd</span> - Deploy custom command script module.</div>
-                <div class="cmd-item"><span class="cmd-name">!banuser</span> - Restrict user access UID from control system.</div>
-            </div>
+            <div class="cmd-list" id="dynamicCommands">
+                </div>
 
             <button class="btn" style="margin-top: 20px;" onclick="switchPage(2)">← Back to Dashboard</button>
         </div>
@@ -250,73 +102,106 @@
     </div>
 
     <script>
-        // Default Login Credentials
-        const ADMIN_USER = "admin";
-        const ADMIN_PASS = "1234";
+        let currentPrefix = "!";
 
-        // Page Switching Function
         function switchPage(pageNumber) {
-            document.querySelectorAll('.page').forEach(page => page.classList.remove('active'));
+            document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
             document.getElementById('page' + pageNumber).classList.add('active');
+            if(pageNumber === 3) { renderCommands(); }
         }
 
-        // Login Validation
         function handleLogin() {
-            const user = document.getElementById('username').value;
-            const pass = document.getElementById('password').value;
-            const error = document.getElementById('login-error');
-
-            if(user === ADMIN_USER && pass === ADMIN_PASS) {
-                error.style.display = "none";
-                switchPage(2); // Opens second page on success
+            if(document.getElementById('username').value === "admin" && document.getElementById('password').value === "1234") {
+                switchPage(2);
+                startStatusTracker();
             } else {
-                error.style.display = "block";
+                document.getElementById('login-error').style.display = "block";
             }
         }
 
-        // New User Bot Run Handler with AppState feature
-        function runBot() {
-            const uid = document.getElementById('botUid').value;
-            const name = document.getElementById('botName').value;
-            const owner = document.getElementById('ownerName').value;
-            const appState = document.getElementById('appStateName').value; // Fetching AppState value
+        // Backend Server par Bot ko process live run karna
+        async function startBackendBot() {
+            const botData = {
+                uid: document.getElementById('botUid').value,
+                name: document.getElementById('botName').value,
+                owner: document.getElementById('ownerName').value,
+                appState: document.getElementById('appStateName').value,
+                prefix: document.getElementById('botPrefix').value
+            };
 
-            if(!uid || !name || !owner || !appState) {
-                alert("Please fill all details, including AppState Name, to run the bot!");
-                return;
-            }
+            currentPrefix = botData.prefix;
 
-            // Target div where live online bots display
-            const list = document.getElementById('online-bots-list');
+            const response = await fetch('/api/run-bot', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(botData)
+            });
+            const result = await response.json();
+            alert(result.message);
+        }
 
-            // Creating structure dynamically for new user bot including AppState
-            const botHtml = `
-                <div class="bot-card" style="border-color: var(--accent-green)">
-                    <div class="bot-header">
-                        <span style="font-weight: bold; color: var(--accent-blue);">${name}</span>
-                        <div style="display: flex; align-items: center; gap: 5px;">
-                            <span style="font-size: 0.8rem; color: var(--accent-green);">Live Running</span>
-                            <span class="status-dot"></span>
-                        </div>
-                    </div>
-                    <div class="bot-details">
-                        <p>UID: <strong>${uid}</strong></p>
-                        <p>Owner: <strong>${owner}</strong></p>
-                        <p>AppState: <strong>${appState}</strong></p>
-                    </div>
-                </div>
-            `;
+        async function stopBackendBot() {
+            const response = await fetch('/api/stop-bot', { method: 'POST' });
+            const result = await response.json();
+            alert(result.message);
+        }
 
-            // Append new bot to display screen
-            list.insertAdjacentHTML('afterbegin', botHtml);
+        // Live Uptime aur Status Fetch Tracker
+        function startStatusTracker() {
+            setInterval(async () => {
+                try {
+                    const response = await fetch('/api/bot-status');
+                    const data = await response.json();
+                    
+                    const dot = document.getElementById('liveStatusDot');
+                    const runBtn = document.getElementById('runBtn');
+                    const stopBtn = document.getElementById('stopBtn');
 
-            // Reset input values
-            document.getElementById('botUid').value = '';
-            document.getElementById('botName').value = '';
-            document.getElementById('ownerName').value = '';
-            document.getElementById('appStateName').value = '';
+                    if(data.status === "Online") {
+                        dot.classList.add('online');
+                        document.getElementById('statusText').innerText = "Live Running";
+                        document.getElementById('statusText').style.color = "var(--accent-green)";
+                        document.getElementById('displayBotName').innerText = data.config.name;
+                        document.getElementById('displayUid').innerText = data.config.uid;
+                        document.getElementById('displayAppState').innerText = data.config.appState;
+                        document.getElementById('displayUptime').innerText = data.uptime;
+                        currentPrefix = data.config.prefix;
 
-            alert("New Bot initiated successfully with AppState and showing live!");
+                        runBtn.style.display = "none";
+                        stopBtn.style.display = "block";
+                    } else {
+                        dot.classList.remove('online');
+                        document.getElementById('statusText').innerText = "Offline";
+                        document.getElementById('statusText').style.color = "var(--text-muted)";
+                        document.getElementById('displayUptime').innerText = "0s";
+                        
+                        runBtn.style.display = "block";
+                        stopBtn.style.display = "none";
+                    }
+                } catch (e) { }
+            }, 1000);
+        }
+
+        // CHAND-TRICKER-BOT ke original commands jo prefix change hone par update honge
+        function renderCommands() {
+            const commands = [
+                { name: "menu", desc: "Main system custom interact panels interface load karein." },
+                { name: "status", desc: "Check core server delay latency and system status." },
+                { name: "restart", desc: "Reboot active internal system code module instantly." },
+                { name: "addcmd", desc: "Hot-deploy custom javascript code commands into runtime." },
+                { name: "banuser", desc: "Restrict target uid user access authorization from panel." },
+                { name: "tid", desc: "Extract current group thread storage database index." }
+            ];
+
+            const container = document.getElementById('dynamicCommands');
+            container.innerHTML = ""; // Clear existing
+
+            commands.forEach(cmd => {
+                container.innerHTML += `
+                    <div class="cmd-item">
+                        <span class="cmd-name">${currentPrefix}${cmd.name}</span> - ${cmd.desc}
+                    </div>`;
+            });
         }
     </script>
 </body>
